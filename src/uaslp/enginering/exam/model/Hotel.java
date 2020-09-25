@@ -6,8 +6,13 @@ public class Hotel {
     private ArrayList<Reservation> reservations;
 
 
+
     public Hotel() {
         reservations = new ArrayList<>();
+    }
+
+    public Hotel(String comfort_poo_inn) {
+
     }
 
     public void reserveRoom(int roomNumber, Guest guest, String arrivalDate, int nights) {
