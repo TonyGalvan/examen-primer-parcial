@@ -4,7 +4,7 @@ import java.util.ArrayList;
 public class Hotel {
     private final ArrayList<Reservation> reservations;
     private final ArrayList<Room> rooms;
-    public String name;
+    private String name;
 
     public Hotel(String name) {
         this.name = name;
@@ -27,11 +27,11 @@ public class Hotel {
         return reservations;
     }
 
-    public void addRoom(Room room){
-        if(room!=null) rooms.add(room);
+    public void addRoom(Room room) {
+        if (room != null) rooms.add(room);
     }
 
-    public String getName(){
+    public String getName() {
         return name;
     }
 
@@ -39,3 +39,4 @@ public class Hotel {
         return rooms;
     }
 }
+
