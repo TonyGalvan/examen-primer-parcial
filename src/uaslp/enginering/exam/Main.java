@@ -8,10 +8,13 @@ import uaslp.enginering.exam.model.RoomStatus;
 
 import java.util.ArrayList;
 
+import static uaslp.enginering.exam.model.Hotel.printInformation;
+import static uaslp.enginering.exam.model.Reservation.printReservations;
+
 public class Main {
 
     public static void main(String[] args) {
-        Hotel hotel = prepareHotel();
+        Hotel hotel = hotel.prepareHotel();
         Guest gregorio = new Guest();
         Guest lucia = new Guest();
 
@@ -37,48 +40,9 @@ public class Main {
 
     }
 
-    private static Hotel prepareHotel() {
-        Hotel hotel = new Hotel("Comfort POO Inn");
 
-        hotel.addRoom(new Room(100, "1-BED-KING", RoomStatus.CLEAN)); // Room receives room number and room description
-        hotel.addRoom(new Room(101, "2-BED-QUEEN", RoomStatus.CLEAN));
-        hotel.addRoom(new Room(102, "1-BED-KING", RoomStatus.CLEAN));
-        hotel.addRoom(new Room(103, "1-BED-KING", RoomStatus.DIRTY));
-        hotel.addRoom(new Room(200, "2-BED-QUEEN", RoomStatus.DIRTY));
-        hotel.addRoom(new Room(201, "2-BED-QUEEN", RoomStatus.CLEAN));
-        hotel.addRoom(new Room(202, "2-BED-QUEEN", RoomStatus.DIRTY));
-        hotel.addRoom(new Room(203, "2-BED-QUEEN", RoomStatus.CLEAN));
-        hotel.addRoom(new Room(204, "2-BED-QUEEN", RoomStatus.CLEAN));
-        hotel.addRoom(new Room(205, "2-BED-QUEEN", RoomStatus.DIRTY));
 
-        return hotel;
-    }
 
-    public static void printInformation(Hotel hotel) {
 
-        System.out.println("---------------------------------------------------------------------");
-        System.out.println(hotel.getName() + " - Hotel information");
 
-        ArrayList<Room> rooms = hotel.getRooms();
-
-        System.out.println("Total rooms: " + rooms.size());
-        System.out.println();
-        System.out.println("Room statuses");
-        for (Room room : rooms) {
-            System.out.println(room.getNumber() + " - " + room.getStatus());
-        }
-        System.out.println("---------------------------------------------------------------------");
-    }
-
-    public static void printReservations(Hotel hotel) {
-        System.out.println("---------------------------------------------------------------------");
-        System.out.println(hotel.getName() + " - reservations");
-        for (Reservation reservation : hotel.getReservations()) {
-            System.out.println(reservation.getRoomNumber() + " - " +
-                    reservation.getGuest().getName() + " - " +
-                    reservation.getArrivalDate() + " - " +
-                    reservation.getNights() + " nights");
-        }
-        System.out.println("---------------------------------------------------------------------");
-    }
 }

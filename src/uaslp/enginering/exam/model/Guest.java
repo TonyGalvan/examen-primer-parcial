@@ -13,7 +13,7 @@ public class Guest {
     }
 
     public String getName() {
-        return this.name;
+        return name;
     }
     public void setAddress(String name) {
         this.address = address;
@@ -22,5 +22,11 @@ public class Guest {
     public String getAddress() {
         var address = this.address;
         return address;
+    }
+
+    public void setCountry(String uruguay) {
+    }
+
+    public void setPhoneNumber(String s) {
     }
 }
